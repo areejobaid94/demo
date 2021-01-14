@@ -18,6 +18,7 @@ function loginPage(){
     document.getElementById("mobile-div").style.display = 'none';
     document.getElementById("psw-repeat-div").style.display = 'none';
     document.getElementById("waight-div").style.display = 'none';
+    document.getElementById("height-div").style.display = 'none';
     document.getElementById('email-div').style.display = 'none';
     isLogInPage = true;
 };
@@ -26,6 +27,7 @@ function sighnUpPage (){
     document.getElementById("mobile-div").style.display = 'block';
     document.getElementById("psw-repeat-div").style.display = 'block';
     document.getElementById("waight-div").style.display = 'block';
+    document.getElementById("height-div").style.display = 'block';
     document.getElementById('email-div').style.display = 'block';
     isLogInPage = false;
 }
@@ -49,7 +51,7 @@ function submitForm(event){
             sighnUpPage ();
         }
     }else if (isLogInPage == false && isExist == false){
-        logedUser = new user(event.target.name.value,event.target.email.value ,event.target.psw.value, event.target.waight.value,event.target.mobile.value);
+        logedUser = new user(event.target.name.value,event.target.email.value ,event.target.psw.value, event.target.waight.value,event.target.mobile.value, event.target.height.value);
         console.log(event.target, logedUser);
         AllUserArray.push(logedUser);
         localStorage.setItem("AllUserArray",JSON.stringify(AllUserArray));

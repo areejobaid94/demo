@@ -1,9 +1,10 @@
-let user = function(name, email, pass,waigth,mobile){
+let user = function(name, email, pass,waigth,mobile, height ){
     this.name = name;
     this.email = email;
     this.password = pass;
     this.waigth = waigth;
     this.mobile =mobile;
+    this.height = height;
 };
 
 function gotoAccount(){

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Account</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button onclick="gotoAccount()">account</button>
+            <button onclick="logout()">logout</button>
+        </nav>
+    </header>
+    <main>
+        <h3>Waight: <p id='waight'></p>
+        </h3>
+        <h3>Name: <p id='name'></p>
+        </h3>
+        <h3>Email: <p id='email'></p>
+        </h3>
+        <h3>Mobile: <p id="mobile"></p>
+        </h3>
+        <button id="edit-botton" onclick="updateTheDate()">Edit Profile</button>
+        <div id = 'edit-div'>
+            <form id='edit-form'>
+                <div>
+                    <h1>Update Data</h1>
+                    <hr>
+                    <div id='email-div'>
+                        <label for="email"><b>Email</b></label>
+                        <input id='email-input' type="text" placeholder="Enter Email" name="email" required>
+                    </div>
+                    <div id='email-name'>
+                        <label for="name"><b>Name</b></label>
+                        <input id='name-input' type="text" placeholder="Enter name" name="name" required>
+                    </div>
+                    <div>
+                        <label for="psw"><b>Password</b></label>
+                        <input id="psw-input"  type="password" placeholder="Enter Password" name="psw" required>
+                    </div>
+                    <div id = "psw-repeat-div">
+                        <label for="pswRepeat"><b>Repeat Password</b></label>
+                        <input id="psw-repeat-input" type="password"  onfocusout ="repPassword()" placeholder="Repeat Password" name="pswRepeat" >
+                        <p id='erorr-message' style="color: red;display: none;">The Repeat Password And The Password are Not Match!</p>
+                    </div>
+                    <div id="waight-div">
+                        <label for="waight"><b>Waight</b></label>
+                        <input id='waight-input' type="number" placeholder="waight" name="waight">
+                    </div>
+                    <div id="mobile-div">
+                        <label for="mobile"><b>mobile</b></label>
+                        <input id='mobile-input' type="text" placeholder="mobile" name="mobile">
+                    </div>
+
+                    <div>
+                        <input type="submit" value="Submit">
+                    </div>
+                </div>
+            </form>
+            <button onclick="hideForm()">Hide Form</button>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/app.js"></script>
+    <script src="js/account.js"></script>
+</body>
+
+</html>

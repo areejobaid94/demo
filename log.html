@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>log Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <button onclick="gotoAccount()">account</button>
+            <button onclick="logout()">logout</button>
+        </nav>
+    </header>
+    <main>
+        <form id = 'log-form'>
+            <div>
+                <h1>Sign Up</h1>
+                <p>Please fill in this form to create an account.</p>
+                <hr>
+                <div id = 'email-div'>
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" required>
+                </div>
+                <div id = 'email-name'>
+                    <label for="name"><b>Name</b></label>
+                    <input type="text" placeholder="Enter name" name="name" required>
+                </div>
+                <div>
+                    <label for="psw"><b>Password</b></label>
+                    <input id="psw-input"  type="password" placeholder="Enter Password" name="psw" required>
+                </div>
+                <div id = "psw-repeat-div">
+                    <label for="pswRepeat"><b>Repeat Password</b></label>
+                    <input id="psw-repeat-input" type="password"  onfocusout ="repPassword()" placeholder="Repeat Password" name="pswRepeat" >
+                    <p id='erorr-message' style="color: red;display: none;">The Repeat Password And The Password are Not Match!</p>
+                </div>
+                <div id = "waight-div">
+                    <label for="waight"><b>Waight</b></label>
+                    <input type="number" placeholder="waight" name="waight" >
+                </div>
+                <div  id = "mobile-div">
+                    <label for="mobile"><b>mobile</b></label>
+                    <input type="text" placeholder="mobile" name="mobile" >
+                </div>
+    
+                <div>
+                    <input type="submit" value="Submit">
+                </div>
+            </div>
+        </form>
+        <button onclick="loginPage()">I have Account</button>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/app.js"></script>
+    <script src="js/log.js"></script>
+</body>
+</html>

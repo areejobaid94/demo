@@ -15,12 +15,25 @@ window.onload = function (){
 }
 
 function loginPage(){
-    document.getElementById("mobile-div").style.display = 'none';
-    document.getElementById("psw-repeat-div").style.display = 'none';
-    document.getElementById("waight-div").style.display = 'none';
-    document.getElementById("height-div").style.display = 'none';
-    document.getElementById('email-div').style.display = 'none';
-    isLogInPage = true;
+    if (isLogInPage === false){
+        document.getElementById("mobile-div").style.display = 'none';
+        document.getElementById("psw-repeat-div").style.display = 'none';
+        document.getElementById("waight-div").style.display = 'none';
+        document.getElementById("height-div").style.display = 'none';
+        document.getElementById('email-div').style.display = 'none';
+        document.getElementById('logIn-UP').textContent = "Log In";
+        document.getElementById('swetch-page').textContent = "Go To Sighn Up Page";    
+        isLogInPage = true;
+    }else{
+        document.getElementById("mobile-div").style.display = 'block';
+        document.getElementById("psw-repeat-div").style.display = 'block';
+        document.getElementById("waight-div").style.display = 'block';
+        document.getElementById("height-div").style.display = 'block';
+        document.getElementById('email-div').style.display = 'block';
+        document.getElementById('logIn-UP').textContent = "Sighn Up";
+        document.getElementById('swetch-page').textContent = "I have Account";    
+        isLogInPage = false;
+    }
 };
 
 function sighnUpPage (){
@@ -37,7 +50,7 @@ logForm.addEventListener('submit',submitForm);
 
 function submitForm(event){
     event.preventDefault();
-    if(isMached == false){
+    if(isMached == false && isLogInPage == false){
         alert('the Password && Repeat Password Are Not Mach');
         return;
     }
@@ -80,13 +93,16 @@ function checkIfUserExist(name,pass){
 }
 
 function repPassword(){
-    let password = document.getElementById('psw-input').value;
-    let pswRepeat = document.getElementById('psw-repeat-input').value;
-    if(password != pswRepeat){
-        document.getElementById('erorr-message').style.display = 'block';
-        isMached = false;
-    }else{
-        document.getElementById('erorr-message').style.display = 'none';
-        isMached = true;
+    console.log(isLogInPage);
+    if(isLogInPage == false){
+        let password = document.getElementById('psw-input').value;
+        let pswRepeat = document.getElementById('psw-repeat-input').value;
+        if(password != pswRepeat){
+            document.getElementById('erorr-message').style.display = 'block';
+            isMached = false;
+        }else{
+            document.getElementById('erorr-message').style.display = 'none';
+            isMached = true;
+        }
     }
 }
